@@ -79,13 +79,6 @@ Indexes were added based on the columns driving joins, `WHERE` filters, and `GRO
 3. Re-ran `EXPLAIN` on the same queries (`03_explain_results.sql`, "AFTER" section) and compared `type`, `key`, and `rows` columns across plans.
 4. Wrapped the core aggregation queries as views (`04_views.sql`) for repeatable reporting.
 
-## Key Findings
-
-> _Fill in with your actual before/after `EXPLAIN` output (the `type`, `key`, and `rows` columns are the ones worth comparing) — keeping this honest and specific is more valuable to reviewers than generic "10x faster" claims._
-
-- Finding 1: _e.g. which query's access type changed from a full table scan (`ALL`) to an index-based lookup (`ref`/`range`), and by how much the estimated `rows` dropped_
-- Finding 2: _e.g. any query where indexing did NOT meaningfully help (and why — e.g. low-cardinality column, small table, or index not used due to `GROUP BY`/`ORDER BY` interaction)_
-- Finding 3: _e.g. trade-offs observed, such as index maintenance overhead on writes vs. read performance gains_
 
 ## How to Reproduce
 
